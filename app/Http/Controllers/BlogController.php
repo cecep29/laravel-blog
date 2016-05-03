@@ -17,6 +17,7 @@ class BlogController extends Controller
      */
     public function index()
     {
+        //menampilkan seluruh data di tabel blog
         $blogs = Blog::all();
 
         return view('blog.index', ['blogs'=>$blogs]);
@@ -29,7 +30,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('blog.create');
     }
 
     /**
@@ -40,7 +41,18 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+                'title' =>  'required',
+                'subject' => 'required'
+            ]);
+
+        $blog = new Blog;
+
+        $blog->title = $request->title;
+        $blog->subject = $request->subject;
+
+        $blog->save();
+
     }
 
     /**
