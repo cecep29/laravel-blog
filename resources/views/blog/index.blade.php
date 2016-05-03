@@ -1,3 +1,4 @@
+{{ Session::get('message') }}
 All Bloglist
 
 @foreach($blogs as $blog)

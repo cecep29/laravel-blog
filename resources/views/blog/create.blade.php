@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
 <div class="row">
 @if(count($errors) > 0)
 	<div class="col-md-3"></div>
@@ -12,6 +13,7 @@
 	</div>
 	</div>
 @endif
+
 </div>
 
 <div class="row">
